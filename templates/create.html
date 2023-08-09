@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <style>
+        #main{
+            text-align: center;
+        }
+        #nav{
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:0px 30px;
+        }
+        #nav-button{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap:30px;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="nav">
+            <div>
+                <h1>Django</h1>
+            </div>
+            <div id="nav-button">
+                <h4>
+                    <a href="/">Home</a>
+                </h4>
+                <h4>
+                    <a href="/read">Read</a>
+                </h4>
+                <h4>
+                    <a href="/create">Create</a>
+                </h4>
+                <h4>
+                    <a href="/update">Update</a>
+                </h4>
+                <h4>
+                    <a href="/delete">Delete</a>
+                </h4>
+                
+            </div>
+
+        </div>
+        <br>
+        <h1>Create a data</h1>
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                Key: <input type="text" name="key"><br>
+                <br>
+                Value: <input type="text" name="value"><br>
+                <br>
+                <input type="submit" value="Create">
+            </form>
+
+        </div>
+    </div>
+   
+</body>
+</html>
